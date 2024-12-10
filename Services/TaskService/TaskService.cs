@@ -1,4 +1,4 @@
-﻿using AutoMapper;
+using AutoMapper;
 using Domain.Entities;
 using Infrastructure.Common;
 using Infrastructure.Repository;
@@ -209,14 +209,25 @@ namespace Services.TaskService
             };
         }
 
-        public async Task<List<Tasks>> GetPaggedDataAsync(FilterTaskModelView filterTaskModelView, ClaimsPrincipal _user)
+        public async Task<List<EditTaskModelView>> GetPaggedDataAsync(FilterTaskModelView filterTaskModelView, ClaimsPrincipal _user)
         {
             var user = await userManager.GetUserAsync(_user);
             if (user != null)
             {
                 var result = Repository.GetFiltered(
                     x => !x.IsDeleted &&
-                    x.VodafoneUserId == user.Id
+                    x.VodafoneUserId == user.Id,y=> new EditTaskModelView
+                    {
+                        Id = y.Id,
+                        Title = y.Title,
+                        DeletedDate = y.DeletedDate,
+                        Description = y.Description,
+                        Status = y.Status,
+                        StartDate= y.StartDate,
+                        DueDate = y.DueDate,
+                        CompletionDate = y.CompletionDate,
+                        IsDeleted = y.IsDeleted
+                    },""
                     );
                 if (filterTaskModelView.Status != null)
                     result = result.Where(x => x.Status == filterTaskModelView.Status);
@@ -229,7 +240,8 @@ namespace Services.TaskService
                     if (filterTaskModelView.FilterBy == 3)
                         result = result.Where(x => x.CompletionDate >= filterTaskModelView.DateFrom && x.CompletionDate <= filterTaskModelView.DateTo);
                 }
-                result = result.Skip(filterTaskModelView.PageNumber*filterTaskModelView.PageSize??0);
+                int num = filterTaskModelView.PageNumber * filterTaskModelView.PageSize ?? 0;
+                result = result.Skip(num);
                 return result.ToList();
             }
             return null;
