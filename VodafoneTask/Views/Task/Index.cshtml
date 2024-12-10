@@ -1,0 +1,49 @@
+﻿@{
+    ViewBag.Title = "Tasks Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainContainer" class="main-block">
+    <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+    </div>
+    <form >
+        <h1>Create New Task</h1>
+        <div class="info">
+            <div id="AlertMessage" class="alert alert-primary alertCreated" role="alert" style="display:none">
+            </div>
+            <input id="Title" class="fname" type="text" name="name" placeholder="Task Title" >
+            <p style="color:#e60110;">Task Description</p>
+            <div>
+                <textarea id="Description" rows="3" >
+                    </textarea>
+            </div>
+            
+            <select id="Status" >
+                <option value="" style="font-size: larger;font-style: italic;color: #7E1891;">Select Status</option>
+                <option value="1">Pending</option>
+                <option value="2">Completed</option>
+                <option value="3">OverDue</option>
+            </select>
+            <p style="color:#e60110;">Start Date</p>
+            <input id="StartDate" type="date" name="name1" placeholder="Start Date" >
+            <p style="color:#e60110;">Due Date</p>
+            <input id="DueDate" type="date" name="name2" placeholder="Due Date" >
+            <p style="color:#e60110;">Complete Date</p>
+            <input id="CompleteDate" type="date" name="name3" placeholder="Complete Date"  @* style="cursor:not-allowed;background-color: #eee; color: #999;" readonly *@>
+        </div>
+        <button id="BtnAddTask" type="button">Add Task</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/Task/Index.js"></script>
+    <link rel="stylesheet" href="~/css/Task/Index.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+}
+
+

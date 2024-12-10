@@ -1,0 +1,50 @@
+﻿@model Infrastructure.ViewModels.TaskModelViews.EditTaskModelView
+@{
+    ViewBag.Title = "Tasks Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainContainer" class="main-block">
+    <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+    </div>
+    <form>
+        <h1>Edit Task</h1>
+        <div class="info">
+            <div id="AlertMessage" class="alert alert-primary alertCreated" role="alert" style="display:none">
+            </div>
+            <p style="color:#e60110;">Task Title</p>
+            <input id="Title" class="fname" type="text" name="name" asp-for="@Model.Title">
+            <p style="color:#e60110;">Task Description</p>
+            <div>
+                <textarea id="Description" rows="3">@Model.Description </textarea>
+            </div>
+            <p style="color:#e60110;">Status</p>
+            <select id="Status" asp-for="@Model.Status">
+                <option value="" style="font-size: larger;font-style: italic;color: #7E1891;">Select Status</option>
+                <option value="1" >Pending</option>
+                <option value="2" >Completed</option>
+                <option value="3" >OverDue</option>
+            </select>
+            <p style="color:#e60110;">Start Date</p>
+            <input id="StartDate" type="date" name="name1" placeholder="Start Date" asp-for="@Model.StartDate" >
+            <p style="color:#e60110;">Due Date</p>
+            <input id="DueDate" type="date" name="name2" placeholder="Due Date" asp-for="@Model.DueDate">
+            <p style="color:#e60110;">Completion Date</p>
+            <input id="CompleteDate" type="date" name="name3" placeholder="Completion Date" asp-for="@Model.CompletionDate">
+        </div>
+        <button id="BtnEditTask" type="button">Update Task</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/Task/Edit.js"></script>
+    <link rel="stylesheet" href="~/css/Task/Edit.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+}
+
+

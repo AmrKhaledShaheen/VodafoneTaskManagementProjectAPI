@@ -1,0 +1,36 @@
+﻿@model Infrastructure.ViewModels.TaskModelViews.EditTaskModelView
+@{
+    ViewBag.Title = "Tasks Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainContainer" class="main-block">
+    <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+    </div>
+    <form>
+        <h1>Delete Tasks</h1>
+        <div class="info">
+            <div id="AlertMessage" class="alert alert-primary alertCreated" role="alert" style="display:none">
+            </div>
+            <p style="color:#e60110;">Date From</p>
+            <input id="StartDate" type="date" name="name1" placeholder="Start Date" >
+            <p style="color:#e60110;">Date To</p>
+            <input id="DueDate" type="date" name="name2" placeholder="Due Date" >
+           </div>
+        <button id="BtnDelete" type="button" onclick="onClickBatchDelete()" style="margin:5px">Delete Tasks</button>
+        <button id="BtnRestore" type="button" onclick="onClickRestore()" style="margin:5px">Restore Last Deleted Task</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/Task/BatchDeleteView.js"></script>
+    <link rel="stylesheet" href="~/css/Task/BatchDeleteView.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+}
+
+

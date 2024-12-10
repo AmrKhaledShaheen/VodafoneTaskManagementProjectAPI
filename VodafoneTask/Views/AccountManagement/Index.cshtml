@@ -1,0 +1,83 @@
+﻿@{
+    ViewBag.Title = "Registeration Page";
+    ViewBag.displayLogout = false;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<body>
+    <br>
+    <div class="cont">
+        <div class="form sign-in">
+            <div style="display:flex;justify-content:center">
+                <h2 style="width:auto;line-height:unset;align-content:center">Welcome to Vodafone </h2>
+                <img src="~/assets/1.png" alt="Image description" style="width:80px;">
+            </div>
+            <div id="AlertMessage" class="alert alert-primary alertCreated" role="alert">
+                
+            </div>
+
+            <label>
+                <span>Email</span>
+                <input id="Email" type="email" />
+                <span id="EmailError" style="color: red; display: none;">Error in Email</span>
+            </label>
+            <label>
+                <span>Password</span>
+                <input id="Password" type="password" />
+                <span id="PasswordError" style="color: red; display: none;">Password must be at least 8 characters long and contain at least one uppercase letter, one number, and one special character.</span>
+            </label>
+            <p id="ForgotPassword" class="forgot-pass">Forgot password?</p>
+            <button id="SignIn" type="button" class="submit">Sign In</button>
+
+        </div>
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img__text m--up">
+
+                    <h3>Don't have an account? Please Sign up!</h3>
+                </div>
+                <div class="img__text m--in">
+
+                    <h3>If you already has an account, just sign in.</h3>
+                </div>
+                <div class="img__btn">
+                    <span class="m--up">Sign Up</span>
+                    <span class="m--in">Sign In</span>
+                </div>
+            </div>
+            <div class="form sign-up">
+                <div style="display:flex;justify-content:center">
+                    <h2 style="width:auto;line-height:unset;align-content:center">Create your Vodafone Account </h2>
+                    <img src="~/assets/1.png" alt="Image description" style="width:80px;">
+                </div>
+                <div id="AlertMessageSignUp"  class="alert alert-primary alertCreated" role="alert">
+                   
+                </div>
+                <label>
+                    <span>UserName</span>
+                    <input id="UserName" type="text" />
+                    <span id="UserNameError" style="color: red; display: none;">Error in Username, Cannot be Empty or short</span>
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input id="EmailSignUp" type="email" />
+                    <span id="EmailSignUpError" style="color: red; display: none;">Error in Email</span>
+                </label>
+                <label>
+                    <span>Password</span>
+                    <input id="PasswordSignUp" type="password" />
+                    <span id="PasswordSignUpError" style="color: red; display: none;">Error in Password</span>
+                </label>
+                <button id="SignUp" type="button" class="submit">Sign Up</button>
+
+            </div>
+        </div>
+    </div>
+
+   
+
+    @section Scripts {
+        <script src="~/js/AccountManagement/Index.js"></script>
+        <link rel="stylesheet" href="~/css/AccountManagement/Index.css"></link>
+    }
+</body>
+

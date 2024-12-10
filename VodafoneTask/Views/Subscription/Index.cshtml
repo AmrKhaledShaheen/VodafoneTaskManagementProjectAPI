@@ -1,0 +1,43 @@
+﻿@model Infrastructure.ViewModels.TaskModelViews.EditTaskModelView
+@{
+    ViewBag.Title = "Subscription Page";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div id="mainContainer" class="main-block">
+    <div class="left-part">
+        <i class="fas fa-envelope"></i>
+        <i class="fas fa-at"></i>
+        <i class="fas fa-mail-bulk"></i>
+    </div>
+    <form>
+        <h1>Subscription Page</h1>
+        <div class="info">
+            <div id="AlertMessage" class="alert alert-primary alertCreated" role="alert" style="display:none">
+            </div>
+            <p style="color:#e60110;">Start Date</p>
+            <input id="StartDate" type="date" name="name1" placeholder="Start Date">
+            <p style="color:#e60110;">Report Time</p>
+            <input id="ReportTime" class="fname" type="time" name="name" >
+            <p style="color:#e60110;">Report Frequency</p>
+            <select id="Frequency" >
+                <option value="" disabled style="font-size: larger;font-style: italic;color: #7E1891;">Select Frequency</option>
+                <option value="1">Daily</option>
+                <option value="2">Weekly</option>
+                <option value="3">Monthly</option>
+            </select>
+        </div>
+        <button id="BtnSubscribe" type="button" onclick="onClickSubscribe()" style="margin:5px">Subscribe</button>
+        <button id="BtnUnSubscribe" type="button" onclick="onClickUnSubscribe()" style="margin:5px">Cancel My Subscription</button>
+    </form>
+</div>
+
+
+@section Scripts {
+    <script src="~/js/Subscription/Subscription.js"></script>
+    <link rel="stylesheet" href="~/css/Subscription/Subscription.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+}
+
+

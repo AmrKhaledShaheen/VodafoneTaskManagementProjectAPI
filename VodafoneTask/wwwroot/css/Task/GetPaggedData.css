@@ -1,0 +1,71 @@
+﻿#datatable {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+    #datatable thead th {
+        background-color: #f4f4f4;
+    }
+
+    #datatable tbody tr:hover {
+        background-color: #f1f1f1;
+    }
+
+    #datatable td,
+    #datatable th {
+        font-size: 11px;
+        text-align: left;
+    }
+
+textarea {
+    height: 30px;
+}
+
+table.dataTable > thead > tr > th:not(.sorting_disabled), table.dataTable > thead > tr > td:not(.sorting_disabled) {
+    /*  padding-right: 0px; */
+}
+
+table.dataTable > thead .sorting:before, table.dataTable > thead .sorting:after, table.dataTable > thead .sorting_asc:before, table.dataTable > thead .sorting_asc:after, table.dataTable > thead .sorting_desc:before, table.dataTable > thead .sorting_desc:after, table.dataTable > thead .sorting_asc_disabled:before, table.dataTable > thead .sorting_asc_disabled:after, table.dataTable > thead .sorting_desc_disabled:before, table.dataTable > thead .sorting_desc_disabled:after {
+    position: absolute;
+    bottom: .5em;
+    display: block;
+    opacity: .3;
+}
+
+.fw-semibold2 {
+    font-size: 11px !important;
+    font-weight: 600 !important;
+}
+
+.select2-container .select2-search--inline .select2-search__field {
+    box-sizing: border-box;
+    border: none;
+    font-size: 100%;
+    margin-top: 5px;
+    margin-left: 5px;
+    padding: 0;
+    max-width: 64%;
+    resize: none;
+    height: 13px;
+    vertical-align: bottom;
+    font-family: sans-serif;
+    overflow: hidden;
+    word-break: keep-all;
+    font-size: 11px;
+}
+
+.fw-semibold {
+    margin-left: 15px !important;
+    color: #405189 !important;
+}
+
+.input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 20px;
+    border: 1px solid #e60110;
+    outline: none;
+    color: #e60110
+}
+
+
