@@ -1,4 +1,4 @@
-﻿using Domain.Entities;
+using Domain.Entities;
 using Infrastructure.Common;
 using Infrastructure.ViewModels.TaskModelViews;
 using System;
@@ -15,7 +15,7 @@ namespace Services.TaskService
     {
         public Task<ResponseBase> CreateNewTaskAsync(Infrastructure.ViewModels.TaskModelViews.CreateTaskModelView createTaskModelView, System.Security.Claims.ClaimsPrincipal user);
         public Task<ResponseBase> EditTaskAsync(EditTaskModelView editTaskModelView, ClaimsPrincipal user);
-        public Task<List<Tasks>> GetPaggedDataAsync(FilterTaskModelView filterTaskModelView, ClaimsPrincipal _user);
+        public Task<List<EditTaskModelView>> GetPaggedDataAsync(FilterTaskModelView filterTaskModelView, ClaimsPrincipal _user);
 
         public EditTaskModelView getTaskById(int id);
         public Task<ResponseBase> RestoreTask(ClaimsPrincipal user);
