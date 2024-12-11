@@ -1,5 +1,6 @@
 # VodafoneTask
-I Created .net core Mvc Project with frontend to let you test all features with UI
+I Created .net core Mvc Project here https://github.com/AmrKhaledShaheen/VodafoneTaskManagementMvcProject.git
+I hope you visit it first
 # Tools Needed 
 (Visual Studio, .net 8)
 # to run the project
@@ -12,8 +13,7 @@ you have to change the connection string in appsetting file then update database
     4-VodafoneTask(# Main Project).
 
 #(Vodafone Task) Main Part in the Solution
-* has controllers, View, and every view has 2 files one for css styling and the other for JavaScript both 2 files have the same name as view
-* Every Controller has service, views folder,ModelView folder, css file, JavaScript file with the same name
+* Every Controller has service,ModelView folder, with the same name
 
 #Example Api
 * Api: http://localhost:5236/Task/GetPaggedDataFilter
